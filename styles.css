@@ -11,7 +11,10 @@
 
 html, body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    width: 100vw;
 }
 
 #sidebar {
@@ -21,16 +24,17 @@ html, body {
     background-position: center;
     position: relative;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    background-size: cover;
 }
 
 #logo {
-    margin-top: 40%;
+    margin-top: 20vh;
     display: flex;
     align-content: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
+    padding: 20px 0px;
 }
 
 #logo img {
@@ -57,7 +61,107 @@ html, body {
     padding-top: 10px;
 }
 
-
 main {
     flex: 2;
+    background-color: #f7f7f7;
+    overflow-y: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+form > * {
+    padding: 20px;
+}
+
+#blurb {
+    font-size: 24px;
+    font-weight: bold;
+    max-width: 48rem;
+    margin-bottom: 50px;
+}
+
+#form {
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 48px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#form .row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 48rem;
+}
+
+.row > div {
+    width: 100%;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+#form h3 {
+    font-size: 24px;
+    color: #1e1e1e;
+}
+
+#form label {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+#form input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#form input:focus {
+    outline: none;
+    border: 2px solid dodgerblue;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="password"]:invalid {
+    border: 2px solid red !important;
+}
+
+#form div:has(> #password:invalid)::after {
+    content: "* Password must be at least 8 characters long";
+    color: red;
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+}
+
+#submit {
+    background-color: #3d7574;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    width: 20rem;
+    border: none;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+#submit:active {
+    background-color: #2e5756;
 }
